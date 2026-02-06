@@ -4,7 +4,7 @@ import path from 'path';
 
 interface SearchResult {
   id: string;
-  type: 'memory' | 'document' | 'task' | 'conversation';
+  type: 'memory' | 'document' | 'task';
   title: string;
   content: string;
   path: string;
@@ -21,77 +21,35 @@ export async function GET(request: Request) {
   }
   
   try {
-    const workspacePath = path.join(process.cwd(), '..');
-    const results: SearchResult[] = [];
+    const indexPath = path.join(process.cwd(), 'data', 'search-index.json');
     
-    // Search through key files
-    const filesToSearch = [
-      { path: 'MEMORY.md', type: 'memory' as const },
-      { path: 'SOUL.md', type: 'document' as const },
-      { path: 'USER.md', type: 'document' as const },
-      { path: 'TOOLS.md', type: 'document' as const },
-      { path: 'research/crypto-narratives-2026.md', type: 'memory' as const },
-      { path: 'content/tweet-queue.md', type: 'task' as const },
-      { path: 'content/tweet-stats.json', type: 'task' as const },
-    ];
-    
-    // Also search memory directory
-    const memoryDir = path.join(workspacePath, 'memory');
-    if (fs.existsSync(memoryDir)) {
-      const memoryFiles = fs.readdirSync(memoryDir).filter(f => f.endsWith('.md'));
-      for (const file of memoryFiles) {
-        filesToSearch.push({ path: `memory/${file}`, type: 'memory' as const });
-      }
+    if (!fs.existsSync(indexPath)) {
+      return NextResponse.json({ results: [] });
     }
     
+    const index = JSON.parse(fs.readFileSync(indexPath, 'utf-8'));
+    const results: SearchResult[] = [];
     let resultId = 0;
     
-    for (const file of filesToSearch) {
-      const fullPath = path.join(workspacePath, file.path);
+    for (const item of index) {
+      const searchText = `${item.title} ${item.preview}`.toLowerCase();
       
-      if (!fs.existsSync(fullPath)) continue;
-      
-      try {
-        const content = fs.readFileSync(fullPath, 'utf-8');
-        const lowerContent = content.toLowerCase();
+      if (searchText.includes(query)) {
+        const matches = (searchText.match(new RegExp(query, 'g')) || []).length;
+        const relevance = Math.min(1, matches * 0.1 + 0.5);
         
-        if (lowerContent.includes(query)) {
-          // Calculate relevance based on frequency
-          const matches = (lowerContent.match(new RegExp(query, 'g')) || []).length;
-          const relevance = Math.min(1, matches * 0.1 + 0.5);
-          
-          // Extract relevant snippet
-          const index = lowerContent.indexOf(query);
-          const start = Math.max(0, index - 50);
-          const end = Math.min(content.length, index + query.length + 150);
-          const snippet = content.substring(start, end).replace(/\n/g, ' ').trim();
-          
-          // Get title from first heading or filename
-          const titleMatch = content.match(/^#\s+(.+)/m);
-          const title = titleMatch ? titleMatch[1] : file.path.split('/').pop() || file.path;
-          
-          // Get date from filename or file stats
-          const dateMatch = file.path.match(/(\d{4}-\d{2}-\d{2})/);
-          const stats = fs.statSync(fullPath);
-          const date = dateMatch ? dateMatch[1] : stats.mtime.toISOString().split('T')[0];
-          
-          results.push({
-            id: `search-${resultId++}`,
-            type: file.type,
-            title,
-            content: snippet + '...',
-            path: file.path,
-            date,
-            relevance,
-          });
-        }
-      } catch (e) {
-        // Skip files that can't be read
-        continue;
+        results.push({
+          id: `search-${resultId++}`,
+          type: item.type,
+          title: item.title,
+          content: item.preview,
+          path: item.path,
+          date: item.date,
+          relevance
+        });
       }
     }
     
-    // Sort by relevance
     results.sort((a, b) => b.relevance - a.relevance);
     
     return NextResponse.json({ results: results.slice(0, 20) });

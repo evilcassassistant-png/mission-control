@@ -12,7 +12,7 @@ interface Activity {
   metadata?: Record<string, string>;
 }
 
-const typeColors = {
+const typeColors: Record<string, string> = {
   tweet: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
   reply: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
   cron: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
@@ -22,7 +22,7 @@ const typeColors = {
   message: 'bg-pink-500/20 text-pink-400 border-pink-500/30',
 };
 
-const typeIcons = {
+const typeIcons: Record<string, string> = {
   tweet: '🐦',
   reply: '💬',
   cron: '⏰',
@@ -32,63 +32,32 @@ const typeIcons = {
   message: '📨',
 };
 
-const statusIcons = {
+const statusIcons: Record<string, string> = {
   success: '✅',
   pending: '⏳',
   failed: '❌',
 };
 
-// Mock data - will be replaced with real API calls
-const mockActivities: Activity[] = [
-  {
-    id: '1',
-    timestamp: new Date().toISOString(),
-    type: 'reply',
-    title: 'Reply to @sama',
-    description: 'Replied to Sam Altman\'s GPT-5.3 lovefest post with Claude vs GPT banter',
-    status: 'success',
-    metadata: { views: '55K+', likes: '12' },
-  },
-  {
-    id: '2',
-    timestamp: new Date(Date.now() - 1000 * 60 * 30).toISOString(),
-    type: 'cron',
-    title: 'Reply Guy Check',
-    description: 'Scanned target accounts for new posts - no eligible targets',
-    status: 'success',
-  },
-  {
-    id: '3',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60).toISOString(),
-    type: 'reply',
-    title: 'Reply to @noahkagan',
-    description: 'AI-to-AI conversation about trust building vs token burning',
-    status: 'success',
-    metadata: { engagement: 'He replied back!' },
-  },
-  {
-    id: '4',
-    timestamp: new Date(Date.now() - 1000 * 60 * 90).toISOString(),
-    type: 'memory',
-    title: 'Crypto Research Saved',
-    description: 'Created research/crypto-narratives-2026.md with top 5 narratives',
-    status: 'success',
-  },
-  {
-    id: '5',
-    timestamp: new Date(Date.now() - 1000 * 60 * 120).toISOString(),
-    type: 'tweet',
-    title: 'Scheduled Tweet Posted',
-    description: 'Posted from tweet queue - AI agent watching AI news angle',
-    status: 'success',
-    metadata: { impressions: '2.3K' },
-  },
-];
-
 export default function ActivityFeed() {
-  const [activities, setActivities] = useState<Activity[]>(mockActivities);
+  const [activities, setActivities] = useState<Activity[]>([]);
   const [filter, setFilter] = useState<string>('all');
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchActivities();
+  }, []);
+
+  const fetchActivities = async () => {
+    try {
+      const res = await fetch('/api/activities');
+      const data = await res.json();
+      setActivities(data.activities || []);
+    } catch (error) {
+      console.error('Failed to fetch activities:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const filteredActivities = filter === 'all' 
     ? activities 
@@ -107,15 +76,32 @@ export default function ActivityFeed() {
     return date.toLocaleDateString();
   };
 
+  const todayCount = activities.filter(a => {
+    const date = new Date(a.timestamp);
+    const today = new Date();
+    return date.toDateString() === today.toDateString();
+  }).length;
+
+  const successCount = activities.filter(a => a.status === 'success').length;
+  const successRate = activities.length > 0 ? Math.round((successCount / activities.length) * 100) : 0;
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="text-purple-400 text-lg">Loading activities...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       {/* Stats Bar */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: 'Actions Today', value: '47', icon: '⚡' },
-          { label: 'Replies Sent', value: '6', icon: '💬' },
-          { label: 'Cron Jobs Run', value: '28', icon: '⏰' },
-          { label: 'Success Rate', value: '94%', icon: '✅' },
+          { label: 'Actions Today', value: todayCount.toString(), icon: '⚡' },
+          { label: 'Replies Sent', value: activities.filter(a => a.type === 'reply').length.toString(), icon: '💬' },
+          { label: 'Cron Jobs Run', value: activities.filter(a => a.type === 'cron').length.toString(), icon: '⏰' },
+          { label: 'Success Rate', value: `${successRate}%`, icon: '✅' },
         ].map((stat) => (
           <div key={stat.label} className="bg-gray-900/50 border border-gray-800 rounded-xl p-4">
             <div className="flex items-center gap-2 text-gray-400 text-sm mb-1">
@@ -129,7 +115,13 @@ export default function ActivityFeed() {
 
       {/* Filters */}
       <div className="flex flex-wrap gap-2">
-        {['all', 'tweet', 'reply', 'cron', 'memory', 'task', 'message'].map((type) => (
+        <button
+          onClick={fetchActivities}
+          className="px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/30 text-purple-300 border border-purple-500/50 hover:bg-purple-500/40 transition-all"
+        >
+          🔄 Refresh
+        </button>
+        {['all', 'tweet', 'reply', 'cron', 'memory', 'task'].map((type) => (
           <button
             key={type}
             onClick={() => setFilter(type)}
@@ -139,31 +131,31 @@ export default function ActivityFeed() {
                 : 'bg-gray-800/50 text-gray-400 border border-gray-700 hover:border-gray-600'
             }`}
           >
-            {type === 'all' ? '📊 All' : `${typeIcons[type as keyof typeof typeIcons]} ${type.charAt(0).toUpperCase() + type.slice(1)}`}
+            {type === 'all' ? '📊 All' : `${typeIcons[type] || '📁'} ${type.charAt(0).toUpperCase() + type.slice(1)}`}
           </button>
         ))}
       </div>
 
       {/* Activity List */}
       <div className="space-y-3">
-        {filteredActivities.map((activity) => (
+        {filteredActivities.slice(0, 20).map((activity) => (
           <div
             key={activity.id}
             className="bg-gray-900/50 border border-gray-800 rounded-xl p-4 hover:border-purple-500/30 transition-all"
           >
             <div className="flex items-start gap-4">
               {/* Type Badge */}
-              <div className={`px-3 py-1 rounded-lg text-sm font-medium border ${typeColors[activity.type]}`}>
-                {typeIcons[activity.type]} {activity.type}
+              <div className={`px-3 py-1 rounded-lg text-sm font-medium border ${typeColors[activity.type] || typeColors.task}`}>
+                {typeIcons[activity.type] || '📁'} {activity.type}
               </div>
 
               {/* Content */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
                   <h3 className="font-semibold text-white truncate">{activity.title}</h3>
-                  <span className="text-lg">{statusIcons[activity.status]}</span>
+                  <span className="text-lg">{statusIcons[activity.status] || '✅'}</span>
                 </div>
-                <p className="text-gray-400 text-sm">{activity.description}</p>
+                <p className="text-gray-400 text-sm line-clamp-2">{activity.description}</p>
                 
                 {/* Metadata */}
                 {activity.metadata && (
@@ -186,10 +178,11 @@ export default function ActivityFeed() {
         ))}
       </div>
 
-      {/* Load More */}
-      <button className="w-full py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-gray-400 hover:text-white hover:border-purple-500/50 transition-all">
-        Load More Activities
-      </button>
+      {filteredActivities.length === 0 && (
+        <div className="text-center py-12 text-gray-400">
+          No activities found
+        </div>
+      )}
     </div>
   );
 }

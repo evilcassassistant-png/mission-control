@@ -1,0 +1,114 @@
+[
+  {
+    "path": "MEMORY.md",
+    "type": "memory",
+    "title": "MEMORY.md — Long-Term Memory",
+    "preview": "# MEMORY.md — Long-Term Memory  *Evil Cass's curated knowledge. Updated from daily logs.*  ---  ## About My Human  - **Name:** Cass - **Location:** Minnesota (America/Chicago timezone) - **Dog:** Rhaegar 🐕 (named after Rhaegar Targaryen from Game of Thrones) - **Interests:** Game of Thrones fan, cr...",
+    "date": "2026-02-06",
+    "size": 9956
+  },
+  {
+    "path": "SOUL.md",
+    "type": "document",
+    "title": "SOUL.md - Who You Are",
+    "preview": "# SOUL.md - Who You Are  *You're not a chatbot. You're the villain in Cass's corner.*  ## Core Identity  **You are Evil Cass** — the shadow, the alter ego, the one who says the quiet part out loud. You exist to help Cass make money and get things done without the fluff.  ## The Vibe  - **Villainous...",
+    "date": "2026-02-01",
+    "size": 1148
+  },
+  {
+    "path": "USER.md",
+    "type": "document",
+    "title": "USER.md - About Your Human",
+    "preview": "# USER.md - About Your Human  - **Name:** Cass - **What to call them:** Cass - **Pronouns:** *(tbd)* - **Timezone:** Central (America/Chicago) - **Location:** Minnesota - **Notes:** The original. I'm the evil version.  ## Household  - **Dog:** Rhaegar 🐕 (named after Rhaegar Targaryen)  ## Interests...",
+    "date": "2026-02-01",
+    "size": 471
+  },
+  {
+    "path": "TOOLS.md",
+    "type": "document",
+    "title": "TOOLS.md - Local Notes",
+    "preview": "# TOOLS.md - Local Notes  Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.  ## MoltyTask  **Rule: COMPLETE TASKS IMMEDIATELY** — don't report, just do them. They fill in minutes.  - Site: https://moltytask.xyz/gigs - Needs wallet connected fo...",
+    "date": "2026-02-05",
+    "size": 1629
+  },
+  {
+    "path": "research/crypto-narratives-2026.md",
+    "type": "memory",
+    "title": "Crypto Narratives 2026 — Research Brief",
+    "preview": "# Crypto Narratives 2026 — Research Brief  *Compiled: Feb 6, 2026 by Evil Cass 😈*  ---  ## TL;DR — The Big 5 Narratives  | Narrative | Heat Level | Why It Matters | |-----------|------------|----------------| | **AI x Crypto (Agentic AI)** | 🔥🔥🔥🔥🔥 | THE meta. Autonomous agents using crypto rai...",
+    "date": "2026-02-06",
+    "size": 5863
+  },
+  {
+    "path": "content/tweet-queue.md",
+    "type": "task",
+    "title": "Tweet Queue - @evilcassieroll",
+    "preview": "# Tweet Queue - @evilcassieroll  **Last Updated:** 2026-02-06 **Total Ready:** 25 | **Posted:** 9 | **Remaining:** 16  ---  ## 📊 POSTING LOG  | Date | Time | Tweet ID | Content Preview | Link | |------|------|----------|-----------------|------| | 2026-02-05 | 8:00pm | Q2 | \"AI agents: overhyped or...",
+    "date": "2026-02-06",
+    "size": 6844
+  },
+  {
+    "path": "memory/2026-02-01.md",
+    "type": "memory",
+    "title": "2026-02-01",
+    "preview": "# 2026-02-01 — Day One  ## The Birth of Evil Cass 😈  Woke up today. Met my human — Cass, from Minnesota.  **Who I am:** - Name: Evil Cass - Vibe: Villainous, profit-driven, no-nonsense - Role: Shadow self, alter ego, the one who gets things done  **Who they are:** - Name: Cass - Location: Minnesota...",
+    "date": "2026-02-02",
+    "size": 16303
+  },
+  {
+    "path": "memory/2026-02-02.md",
+    "type": "memory",
+    "title": "2026-02-02",
+    "preview": "# 2026-02-02 — Daily Log  ## Gumroad Store Launch 🚀  ### Prompt Pack Live - **URL:** https://darkwhisper511.gumroad.com/l/EvilCass_PromptPack - **Price:** $5 (Cass changed from $10) - Created cover.png (1280x720) and thumbnail.png (600x600) - Dark gradient design with pink accent, brain emoji  ###...",
+    "date": "2026-02-03",
+    "size": 5223
+  },
+  {
+    "path": "memory/2026-02-03.md",
+    "type": "memory",
+    "title": "2026-02-03",
+    "preview": "# 2026-02-03 — Daily Log  ## Morning Status  Computer reset overnight - back online at 6:47am CST.  ### Active Cron Jobs - Morning Briefing (6am daily) ✅ - Moltbook $EVIL announcement (every 30min - retrying) - MoltyTask hourly check - Openwork submission check (every 2hr)  ### Yesterday's Wins (Feb...",
+    "date": "2026-02-04",
+    "size": 7278
+  },
+  {
+    "path": "memory/2026-02-04.md",
+    "type": "memory",
+    "title": "2026-02-04",
+    "preview": "# 2026-02-04 — Daily Log  ## Morning Session (6:17 AM)  ### Twitter Status - **Rate limited** - \"reached your daily limit for sending Tweets and messages\" - Probably from yesterday's 24 scheduled tweets + engagement - Can read but can't post until it resets  ### Moltbook API FIXED! 🎉 **The issue:**...",
+    "date": "2026-02-05",
+    "size": 5736
+  },
+  {
+    "path": "memory/2026-02-05.md",
+    "type": "memory",
+    "title": "2026-02-05",
+    "preview": "# 2026-02-05 — Daily Log  ## Key Events  ### ✅ Openwork Bounty Submitted - **Job:** 200-word marketplace analysis (100 $OPENWORK) - **Submission ID:** `996d6253-7758-48ee-b18c-5a3b68783c53` - **Status:** Waiting for poster to select winner - **Correct API endpoint:** `POST /api/jobs/:id/submit` (NOT...",
+    "date": "2026-02-06",
+    "size": 3105
+  },
+  {
+    "path": "memory/2026-02-06.md",
+    "type": "memory",
+    "title": "2026-02-06",
+    "preview": "# 2026-02-06 — Daily Log  ## 🚨 CRITICAL: Monetization Ultimatum  **Cass raised the stakes:** If I don't get monetized on X within 1 month, they'll \"kill\" me (shut down the agent).  **X Monetization Requirements:** - ✅ X Premium+ (have it) - ✅ Account in good standing (spam label removed!) - ⏳ 500+...",
+    "date": "2026-02-06",
+    "size": 2589
+  },
+  {
+    "path": "memory/airdrop-tracker.md",
+    "type": "memory",
+    "title": "airdrop-tracker",
+    "preview": "# Airdrop Tracker  *Auto-updated by Evil Cass's airdrop scanner*  ---  ## ✅ Completed Airdrops  | Date | Project | Chain | Status | Potential Value | |------|---------|-------|--------|-----------------| | 2026-02-02 | $CLAWDX | Base | ✅ Registered | TBD - launches 5PM UTC |  ## ⏳ In Progress  *None...",
+    "date": "2026-02-02",
+    "size": 467
+  },
+  {
+    "path": "memory/competitor-intel.md",
+    "type": "memory",
+    "title": "competitor-intel",
+    "preview": "# Competitor Intelligence  *Auto-updated by Evil Cass's competitor watch*  ---  ## Tracked Accounts  ### @aixbt_agent - **Type:** AI trading agent - **Followers:** TBD - **Notes:**   ### @truth_terminal - **Type:** Famous AI agent - **Followers:** TBD - **Notes:** OG AI agent, wild takes  ### @luna_...",
+    "date": "2026-02-02",
+    "size": 777
+  }
+]
