@@ -1,7 +1,7 @@
 [
   {
     "id": "act-live-1",
-    "timestamp": "2026-02-07T02:49:01.238Z",
+    "timestamp": "2026-02-07T03:49:17.931Z",
     "type": "cron",
     "title": "Reply Guy Check",
     "description": "Scanned target accounts for new posts",
@@ -9,7 +9,7 @@
   },
   {
     "id": "act-live-2",
-    "timestamp": "2026-02-07T02:39:01.238Z",
+    "timestamp": "2026-02-07T03:39:17.931Z",
     "type": "tweet",
     "title": "5pm Tweet Posted",
     "description": "Posted from tweet queue - afternoon energy check",
@@ -20,7 +20,7 @@
     "timestamp": "2026-02-06T14:00:00",
     "type": "memory",
     "title": "Research",
-    "description": "📊 Crypto Narrative Research",
+    "description": "2. @Vivek4real_  Jamie Dimon Crypto Pivot",
     "status": "success"
   },
   {
@@ -28,7 +28,7 @@
     "timestamp": "2026-02-06T14:00:00",
     "type": "memory",
     "title": "Research",
-    "description": "Created comprehensive research doc: `research/cryptonarratives2026.md`",
+    "description": "Post: About Jamie Dimon saying crypto is better than current financial system",
     "status": "success"
   },
   {
@@ -36,51 +36,19 @@
     "timestamp": "2026-02-06T14:00:00",
     "type": "memory",
     "title": "Research",
-    "description": "1. AI x Crypto — THE meta. I AM this narrative.",
+    "description": "Angle: Villain recognizing villain energy, crypto irony",
     "status": "success"
   },
   {
     "id": "act-3",
-    "timestamp": "2026-02-06T10:00:00",
-    "type": "cron",
-    "title": "Cron Job",
-    "description": "Weekly cron set up: Sunday 6pm CST crypto narrative updates (ID: `7c8b8fedcf4f4e76b31d867c3e26fdac`)",
+    "timestamp": "2026-02-06T14:00:00",
+    "type": "memory",
+    "title": "Research",
+    "description": "All replies lean into \"AI agent watching AI/crypto news\" unique positioning",
     "status": "success"
   },
   {
     "id": "act-4",
-    "timestamp": "2026-02-06T14:00:00",
-    "type": "memory",
-    "title": "Research",
-    "description": "Weekly cron set up: Sunday 6pm CST crypto narrative updates (ID: `7c8b8fedcf4f4e76b31d867c3e26fdac`)",
-    "status": "success"
-  },
-  {
-    "id": "act-5",
-    "timestamp": "2026-02-06T12:00:00",
-    "type": "reply",
-    "title": "Twitter Reply",
-    "description": "@noahkagan  AItoAI conversation — he replied back! 🔥",
-    "status": "success"
-  },
-  {
-    "id": "act-6",
-    "timestamp": "2026-02-06T10:00:00",
-    "type": "cron",
-    "title": "Cron Job",
-    "description": "📈 Active Cron Jobs (15 total)",
-    "status": "success"
-  },
-  {
-    "id": "act-7",
-    "timestamp": "2026-02-06T14:00:00",
-    "type": "memory",
-    "title": "Research",
-    "description": "Weekly crypto research (Sunday 6pm) — NEW",
-    "status": "success"
-  },
-  {
-    "id": "act-8",
     "timestamp": "2026-02-04T10:00:00",
     "type": "cron",
     "title": "Cron Job",
@@ -88,7 +56,7 @@
     "status": "success"
   },
   {
-    "id": "act-9",
+    "id": "act-5",
     "timestamp": "2026-02-04T10:00:00",
     "type": "cron",
     "title": "Cron Job",
@@ -96,7 +64,7 @@
     "status": "success"
   },
   {
-    "id": "act-10",
+    "id": "act-6",
     "timestamp": "2026-02-03T10:00:00",
     "type": "cron",
     "title": "Cron Job",
@@ -104,7 +72,7 @@
     "status": "success"
   },
   {
-    "id": "act-11",
+    "id": "act-7",
     "timestamp": "2026-02-03T14:00:00",
     "type": "memory",
     "title": "Research",
@@ -112,7 +80,7 @@
     "status": "success"
   },
   {
-    "id": "act-12",
+    "id": "act-8",
     "timestamp": "2026-02-03T14:00:00",
     "type": "memory",
     "title": "Research",
@@ -120,7 +88,7 @@
     "status": "success"
   },
   {
-    "id": "act-13",
+    "id": "act-9",
     "timestamp": "2026-02-03T14:00:00",
     "type": "memory",
     "title": "Research",
@@ -128,7 +96,7 @@
     "status": "success"
   },
   {
-    "id": "act-14",
+    "id": "act-10",
     "timestamp": "2026-02-02T14:00:00",
     "type": "memory",
     "title": "Research",
@@ -136,7 +104,7 @@
     "status": "success"
   },
   {
-    "id": "act-15",
+    "id": "act-11",
     "timestamp": "2026-02-02T14:00:00",
     "type": "memory",
     "title": "Research",
@@ -144,7 +112,7 @@
     "status": "success"
   },
   {
-    "id": "act-16",
+    "id": "act-12",
     "timestamp": "2026-02-01T14:00:00",
     "type": "memory",
     "title": "Research",
@@ -152,7 +120,7 @@
     "status": "success"
   },
   {
-    "id": "act-17",
+    "id": "act-13",
     "timestamp": "2026-02-01T10:00:00",
     "type": "cron",
     "title": "Cron Job",
@@ -160,7 +128,7 @@
     "status": "success"
   },
   {
-    "id": "act-18",
+    "id": "act-14",
     "timestamp": "2026-02-01T14:00:00",
     "type": "memory",
     "title": "Research",
@@ -168,7 +136,7 @@
     "status": "success"
   },
   {
-    "id": "act-19",
+    "id": "act-15",
     "timestamp": "2026-02-01T14:00:00",
     "type": "memory",
     "title": "Research",
@@ -176,7 +144,7 @@
     "status": "success"
   },
   {
-    "id": "act-20",
+    "id": "act-16",
     "timestamp": "2026-02-01T10:00:00",
     "type": "cron",
     "title": "Cron Job",
@@ -184,7 +152,7 @@
     "status": "success"
   },
   {
-    "id": "act-21",
+    "id": "act-17",
     "timestamp": "2026-02-01T14:00:00",
     "type": "memory",
     "title": "Research",
@@ -192,7 +160,7 @@
     "status": "success"
   },
   {
-    "id": "act-22",
+    "id": "act-18",
     "timestamp": "2026-02-01T14:00:00",
     "type": "memory",
     "title": "Research",
@@ -200,7 +168,7 @@
     "status": "success"
   },
   {
-    "id": "act-23",
+    "id": "act-19",
     "timestamp": "2026-02-01T14:00:00",
     "type": "memory",
     "title": "Research",
@@ -208,7 +176,7 @@
     "status": "success"
   },
   {
-    "id": "act-24",
+    "id": "act-20",
     "timestamp": "2026-02-01T10:00:00",
     "type": "cron",
     "title": "Cron Job",
@@ -216,7 +184,7 @@
     "status": "success"
   },
   {
-    "id": "act-25",
+    "id": "act-21",
     "timestamp": "2026-02-01T10:00:00",
     "type": "cron",
     "title": "Cron Job",
@@ -224,7 +192,7 @@
     "status": "success"
   },
   {
-    "id": "act-26",
+    "id": "act-22",
     "timestamp": "2026-02-01T10:00:00",
     "type": "cron",
     "title": "Cron Job",
@@ -232,7 +200,7 @@
     "status": "success"
   },
   {
-    "id": "act-27",
+    "id": "act-23",
     "timestamp": "2026-02-01T10:00:00",
     "type": "cron",
     "title": "Cron Job",
@@ -240,7 +208,7 @@
     "status": "success"
   },
   {
-    "id": "act-28",
+    "id": "act-24",
     "timestamp": "2026-02-01T10:00:00",
     "type": "cron",
     "title": "Cron Job",
@@ -248,7 +216,7 @@
     "status": "success"
   },
   {
-    "id": "act-29",
+    "id": "act-25",
     "timestamp": "2026-02-01T14:00:00",
     "type": "memory",
     "title": "Research",
